@@ -1,14 +1,13 @@
-﻿namespace Tasks
-{
-    public class LinkedListNode<T>
-    {
-        public T Value { get; set; }
-        public LinkedListNode<T> Next { get; set; }
+﻿namespace LinearDataStructureImplementation;
 
-        public LinkedListNode(T value)
-        {
-            Value = value;
-            Next = null;
-        }
+public class LinkedListNode<T>
+{
+    public T Value { get; set; }
+    public LinkedListNode<T> Next { get; set; }
+
+    public LinkedListNode(T value)
+    {
+        Value = value;
+        Next = null;
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace Tasks;
+﻿namespace LinearDataStructureImplementation;
 
 internal class Program
 {

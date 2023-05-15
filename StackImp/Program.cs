@@ -1,4 +1,4 @@
-﻿namespace StackImp;
+﻿namespace LinearDataStructureImplementation;
 
 internal class Program
 {

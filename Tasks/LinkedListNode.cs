@@ -1,11 +1,11 @@
 ﻿namespace LinearDataStructureImplementation;
 
-public class LinkedListNode<T>
+public class LinkedListNode<TData>
 {
-    public T Value { get; set; }
-    public LinkedListNode<T> Next { get; set; }
+    public TData Value { get; set; }
+    public LinkedListNode<TData> Next { get; set; }
 
-    public LinkedListNode(T value)
+    public LinkedListNode(TData value)
     {
         Value = value;
         Next = null;

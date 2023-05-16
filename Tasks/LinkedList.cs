@@ -32,13 +32,11 @@ public class LinkedList<TData>
             {
                 current = current.Next;
             }
-
             current.Next = node;
         }
 
         Count++;
     }
-
     public void RemoveFirst()
     {
         if (Head != null)
@@ -47,7 +45,6 @@ public class LinkedList<TData>
             Count--;
         }
     }
-
     public void RemoveLast()
     {
         if (Head == null)
@@ -72,7 +69,6 @@ public class LinkedList<TData>
         current.Next = null;
         Count--;
     }
-
     public bool Contains(TData value)
     {
         LinkedListNode<TData> current = Head;
@@ -86,7 +82,55 @@ public class LinkedList<TData>
 
             current = current.Next;
         }
-
         return false;
+    }
+    public void Print()
+    {
+        LinkedListNode<TData> current = Head;
+        while (current is not null)
+        {
+            Console.WriteLine(current.Value);
+            current = current.Next;
+        }
+    }
+    public void Remove(TData data)
+    {
+        if (Head is null)
+        {
+            Console.WriteLine("linked list is empty !");
+            return;
+        }
+
+        if (!Contains(data))
+        {
+            Console.WriteLine("data is not found !");
+            return;
+        }
+
+        if (Head.Value!.Equals(data))
+        {
+            Head = Head.Next;
+            return;
+        }
+
+        LinkedListNode<TData> current = Head;
+        LinkedListNode<TData> target = null!;
+
+        while (current!.Next!.Next is not null)
+        {
+            if (current.Next.Value!.Equals(data))
+            {
+                if (current.Next.Value!.Equals(data))
+                {
+                    target = current.Next.Next;
+                    current.Next = null!;
+                    break;
+                }
+            }
+            current = current.Next;
+        }
+
+        current.Next = target!;
+        Count--;
     }
 }

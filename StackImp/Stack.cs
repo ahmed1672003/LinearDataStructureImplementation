@@ -7,7 +7,6 @@ public class Stack<Type>
     private Type[] _items;
     private int _size;
     private const int DefaultCapacity = 4;
-
     public Stack()
     {
         _items = new Type[DefaultCapacity];
@@ -20,7 +19,6 @@ public class Stack<Type>
 
         _items[_size++] = item;
     }
-
     public Type Pop()
     {
         if (_size == 0)
@@ -41,6 +39,14 @@ public class Stack<Type>
 
         return _items[_size - 1];
     }
+
+    public bool Contains(Type value)
+    {
+        if (_items.Contains(value))
+            return true;
+
+        return false;
+    }
     private void ResizeArray(int newSize)
     {
         Type[] newArray = new Type[newSize];
@@ -51,6 +57,7 @@ public class Stack<Type>
         }
         _items = newArray;
     }
+
     private void TrimExcess()
     {
 

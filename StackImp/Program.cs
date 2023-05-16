@@ -1,22 +1,18 @@
-﻿namespace LinearDataStructureImplementation;
+﻿using StackImp;
+
+namespace LinearDataStructureImplementation;
 
 internal class Program
 {
     static void Main(string[] args)
     {
-        Stack<int> stack = new();
-        stack.Push(1);
-        stack.Push(2);
-        stack.Push(3);
-        stack.Push(4);
-        stack.Push(5);
+        Console.Write("enter text: ");
+        Console.WriteLine();
+        if (Console.ReadLine().IsBalanced())
+            Console.WriteLine(" text is balanced !");
+        else
+            Console.WriteLine("text is not balanced !");
 
-        var enumera = stack.GetStackEnumerator();
-
-        while (enumera.MoveNext())
-        {
-            Console.WriteLine(enumera.Current);
-        }
 
     }
 }

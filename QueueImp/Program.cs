@@ -4,10 +4,19 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        Queue<int> qu = new();
-        qu.Enqueue(1);
-        qu.Enqueue(2);
-        qu.Enqueue(3);
-        qu.Enqueue(4);
+        Stack<int> stack = new();
+        stack.Push(1);
+        stack.Push(2);
+        stack.Push(3);
+        stack.Push(4);
+        stack.Push(5);
+
+        var enumerator = stack.GetEnumerator();
+
+
+        while (enumerator.MoveNext())
+        {
+            Console.WriteLine(enumerator.Current);
+        }
     }
 }

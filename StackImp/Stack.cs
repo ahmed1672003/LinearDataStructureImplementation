@@ -1,4 +1,6 @@
-﻿namespace LinearDataStructureImplementation;
+﻿using System.Collections;
+
+namespace LinearDataStructureImplementation;
 
 public class Stack<Type>
 {
@@ -10,9 +12,7 @@ public class Stack<Type>
     {
         _items = new Type[DefaultCapacity];
     }
-
     public int Count => _size;
-
     public void Push(Type item)
     {
         if (_size == _items.Length)
@@ -34,7 +34,6 @@ public class Stack<Type>
 
         return item;
     }
-
     public Type Peek()
     {
         if (_size == 0)
@@ -42,7 +41,6 @@ public class Stack<Type>
 
         return _items[_size - 1];
     }
-
     private void ResizeArray(int newSize)
     {
         Type[] newArray = new Type[newSize];
@@ -51,12 +49,73 @@ public class Stack<Type>
         {
             newArray[i] = _items[i];
         }
-
         _items = newArray;
     }
-    public void Display()
+    private void TrimExcess()
     {
-        for (int i = 0 ; i < _items.Length ; i++)
-            Console.WriteLine(_items[i]);
+
+    }
+    public Enumerator GetStackEnumerator()
+    {
+        return GetEnumerator();
+    }
+    Enumerator GetEnumerator()
+    {
+        if (this._items == null)
+        {
+            throw new InvalidOperationException("Stack cannot be changed during iteration.");
+        }
+        return new Enumerator(_items);
+    }
+    public struct Enumerator : IEnumerator<Type>
+    {
+        Type[] _items;
+
+        int position;
+
+        public Enumerator(Type[] items)
+        {
+            _items = items;
+            position = _items.Length;
+        }
+        public Type Current
+        {
+            get
+            {
+                try
+                {
+                    return _items[position];
+                }
+                catch (IndexOutOfRangeException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    return default(Type)!;
+                }
+            }
+        }
+        object IEnumerator.Current
+        {
+            get
+            {
+                return Current;
+            }
+        }
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool MoveNext()
+        {
+            position--;
+            return position >= 0;
+        }
+        public void Reset()
+        {
+            position = -1;
+        }
     }
 }
+
+

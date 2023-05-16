@@ -1,18 +1,25 @@
-﻿using StackImp;
-
-namespace LinearDataStructureImplementation;
+﻿namespace LinearDataStructureImplementation;
 
 internal class Program
 {
     static void Main(string[] args)
     {
-        Console.Write("enter text: ");
-        Console.WriteLine();
-        if (Console.ReadLine().IsBalanced())
-            Console.WriteLine(" text is balanced !");
-        else
-            Console.WriteLine("text is not balanced !");
+        Stack<int> stack = new();
+        stack.Push(1);
+        stack.Push(2);
+        stack.Push(3);
+        stack.Push(4);
+        stack.Pop();
+        stack.Pop();
+        stack.Pop();
+        Console.WriteLine(stack.Count);
+        Console.WriteLine("========================");
 
 
+        var enumerator = stack.GetStackEnumerator();
+        while (enumerator.MoveNext())
+        {
+            Console.WriteLine(enumerator.Current);
+        }
     }
 }

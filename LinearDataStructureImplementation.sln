@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33513.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedList", "Tasks\LinkedList.csproj", "{2586F386-29DA-4D83-AB92-D3620AE2DA9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinkedList", "Tasks\LinkedList.csproj", "{2586F386-29DA-4D83-AB92-D3620AE2DA9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackImp", "StackImp\StackImp.csproj", "{540386EA-8337-4723-BC62-6E70FCE52CE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StackImp", "StackImp\StackImp.csproj", "{540386EA-8337-4723-BC62-6E70FCE52CE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueueImp", "QueueImp\QueueImp.csproj", "{C101FA70-21E0-4188-88F7-2C447218CE31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QueueImp", "QueueImp\QueueImp.csproj", "{C101FA70-21E0-4188-88F7-2C447218CE31}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

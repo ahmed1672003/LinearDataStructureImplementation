@@ -15,21 +15,20 @@ public class Stack<Type>
     public void Push(Type item)
     {
         if (_size == _items.Length)
-            ResizeArray(_items.Length * 2);
+            ResizeArray(_items.Length + 1);
 
         _items[_size++] = item;
     }
     public Type Pop()
     {
         if (_size == 0)
+        {
             Console.WriteLine("Stack is empty !");
-
+            return default(Type)!;
+        }
         Type item = _items[--_size];
         _items[_size] = default(Type)!;
-
-        if (_size > 0 && _size == _items.Length / 4)
-            ResizeArray(_items.Length / 2);
-
+        ResizeArray(_items.Length - 1);
         return item;
     }
     public Type Peek()
@@ -39,7 +38,6 @@ public class Stack<Type>
 
         return _items[_size - 1];
     }
-
     public bool Contains(Type value)
     {
         if (_items.Contains(value))
@@ -58,10 +56,6 @@ public class Stack<Type>
         _items = newArray;
     }
 
-    private void TrimExcess()
-    {
-
-    }
     public Enumerator GetStackEnumerator()
     {
         return GetEnumerator();
@@ -77,7 +71,6 @@ public class Stack<Type>
     public struct Enumerator : IEnumerator<Type>
     {
         Type[] _items;
-
         int position;
 
         public Enumerator(Type[] items)

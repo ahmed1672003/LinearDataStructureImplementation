@@ -42,7 +42,7 @@ public class Queue<T>
         }
 
         T item = _items[_head];
-        _items[_head] = default(T);
+        _items[_head] = default(T)!;
         _head++;
         _count--;
 
@@ -77,12 +77,27 @@ public class Queue<T>
         {
             if (_head < _tail)
             {
-                Array.Copy(_items, _head, newArray, 0, _count);
+                Array.Copy
+                    (_items,
+                    _head,
+                    newArray,
+                    0,
+                    _count);
             }
             else
             {
-                Array.Copy(_items, _head, newArray, 0, _items.Length - _head);
-                Array.Copy(_items, 0, newArray, _items.Length - _head, _tail);
+                Array.Copy(
+                    _items,
+                    _head,
+                    newArray,
+                    0,
+                    _items.Length - _head);
+
+                Array.Copy(_items,
+                    0,
+                    newArray,
+                    _items.Length - _head,
+                    _tail);
             }
         }
 

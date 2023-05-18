@@ -22,7 +22,7 @@ public class Queue<T>
     {
         if (_count == _items.Length)
         {
-            ResizeArray(_items.Length * 2);
+            ResizeArray(_items.Length + 1);
         }
 
         _items[_tail++] = item;
@@ -38,11 +38,12 @@ public class Queue<T>
     {
         if (_count == 0)
         {
-            throw new InvalidOperationException("Queue is empty");
+            Console.WriteLine("Queue is empty");
+            return default!;
         }
 
         T item = _items[_head];
-        _items[_head] = default(T)!;
+        _items[_head] = default!;
         _head++;
         _count--;
 

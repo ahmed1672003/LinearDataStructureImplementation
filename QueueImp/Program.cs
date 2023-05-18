@@ -1,22 +1,22 @@
-﻿namespace LinearDataStructureImplementation;
+﻿using QueueImp;
+
+namespace LinearDataStructureImplementation;
 
 internal class Program
 {
     static void Main(string[] args)
     {
-        Stack<int> stack = new();
-        stack.Push(1);
-        stack.Push(2);
-        stack.Push(3);
-        stack.Push(4);
-        stack.Push(5);
+        CustomQueue queue = new(3);
+        queue.Enqueue(1);
+        queue.Enqueue(2);
+        queue.Enqueue(3);
 
-        var enumerator = stack.GetEnumerator();
-
-
+        var enumerator = queue.GetQueueEnumerator();
         while (enumerator.MoveNext())
         {
             Console.WriteLine(enumerator.Current);
         }
+
+
     }
 }

@@ -18,8 +18,7 @@ public static class Balance
             {
                 if (pairs.Keys.Contains(t))
                     brackets.Push(t);
-                else
-                    if (pairs.Values.Contains(t))
+                else if (pairs.Values.Contains(t))
                 {
                     if (t == pairs[brackets.Peek()])
                         brackets.Pop();

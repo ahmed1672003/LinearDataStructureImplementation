@@ -2,7 +2,7 @@
 
 public class LinkedList<TData>
 {
-    public LinkedListNode<TData> Head { get; set; }
+    public LinkedListNode<TData> Head { get; private set; }
     public int Count { get; set; }
     public LinkedList()
     {
@@ -120,12 +120,9 @@ public class LinkedList<TData>
         {
             if (current.Next.Value!.Equals(data))
             {
-                if (current.Next.Value!.Equals(data))
-                {
-                    target = current.Next.Next;
-                    current.Next = null!;
-                    break;
-                }
+                target = current.Next.Next;
+                current.Next = null!;
+                break;
             }
             current = current.Next;
         }

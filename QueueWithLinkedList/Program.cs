@@ -1,4 +1,4 @@
-﻿namespace LinearDataStructureImplementation;
+﻿namespace QueueWithLinkedList;
 
 internal class Program
 {
